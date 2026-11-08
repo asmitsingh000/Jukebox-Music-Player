@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="Player">
         <div class="player-box">
@@ -23,7 +26,13 @@
                 <button class="ctrl" id="playBtn"><span class="icon play-icon"></span></button>
                 <button class="ctrl" id="nextBtn"><span class="icon next-icon"></span></button>
             </div>
-            <button class="mode"></button>
+            <div class="mode-wrap">
+                <button class="mode-btn" id="modeBtn" title="Modes">M</button>
+                <div class="mode-menu" id="modeMenu" hidden>
+                    <button class="menu-item" id="shuffleBtn">Shuffle: OFF</button>
+                    <button class="menu-item" id="repeatBtn">Repeat: OFF</button>
+                </div>
+            </div>
         </div>
         <div class="music-display">
             <button class="add-file-btn" id="addFile">
@@ -42,4 +51,5 @@
     <audio src="" id="audio"></audio>
     <script src="script.js"></script>
 </body>
+
 </html>
