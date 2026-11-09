@@ -1,66 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jukebox</title>
+    <title>Pixel Jukebox</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <div class="Player">
-        <div class="player-box">
-            <div class="player-image">
+    <div class="jukebox">
+        <div class="top-panel">
+            <div class="disc-wrap">
                 <div class="disc" id="disc"></div>
             </div>
-
-            <div class="information">
-                <div class="music-name" id="musicName">No song selected</div>
+            <div class="center">
+                <div class="song-pill" id="musicName">No song selected</div>
+                <div class="controls">
+                    <button class="ctrl" id="prevBtn" title="Previous">&#9664;&#9664;</button>
+                    <button class="ctrl big" id="playBtn" title="Play / Pause">
+                        <span id="playIcon">&#9654;</span>
+                    </button>
+                    <button class="ctrl" id="nextBtn" title="Next">&#9654;&#9654;</button>
+                </div>
             </div>
-
-            <div class="butons">
-                <button class="ctrl" id="prevBtn" title="Previous">
-                    <span class="icon prev-icon" id="playIcon"></span>
-                </button>
-                <button class="ctrl" id="playBtn" title="Play / Pause">
-                    <span class="icon play-icon"></span>
-                </button>
-                <button class="ctrl" id="nextBtn" title="Next">
-                    <span class="icon next-icon"></span>
-                </button>
-            </div>
-
             <div class="mode-wrap">
                 <button class="mode-btn" id="modeBtn" title="Modes">M</button>
                 <div class="mode-menu" id="modeMenu" hidden>
                     <button class="menu-item" id="shuffleBtn">Shuffle: OFF</button>
                     <button class="menu-item" id="repeatBtn">Repeat: OFF</button>
+                    <button class="menu-item" id="repeatBtn">Mute: OFF</button>
                 </div>
             </div>
         </div>
-
-        <div class="music-display">
+        <div class="bottom-panel">
             <button class="add-file-btn" id="addFileBtn">+ ADD FILE</button>
             <input type="file" id="fileInput" accept="audio/*" multiple hidden>
-
             <div class="tabs">
                 <button class="tab active" data-tab="default">DEFAULT MUSIC</button>
                 <button class="tab" data-tab="new">NEW MUSIC</button>
             </div>
-
-            <div class="files">
+            <div class="list-box">
                 <ul id="songList"></ul>
             </div>
         </div>
     </div>
-
     <audio id="audio"></audio>
     <script src="script.js"></script>
 </body>
-
 </html>
