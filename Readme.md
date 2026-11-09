@@ -18,7 +18,7 @@ A retro, pixel-style web jukebox built with plain **HTML, CSS, and JavaScript**.
   - Shuffle ON/OFF
   - Repeat OFF,ALL,ONE
   - Mute ON/OFF
-- **Visual feedback** the M button turns red whenever any mode is active; the play button icon toggles between ▶ and ❚❚.
+- **Visual feedback** the M button turns red whenever any mode is active; the play button icon toggles between ▶️ and ⏸️.
 - **Auto-advance** to the next track when a song ends, respecting the repeat and shuffle settings.
 - **Responsive layout** that stacks vertically on small screens
 
