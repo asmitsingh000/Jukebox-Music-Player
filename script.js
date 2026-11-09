@@ -11,7 +11,7 @@ let currentTab = "default";
 let currentSong = null;
 let isShuffle = false;
 let repeatMode = "off";
-let isMuted = "off";
+let isMuted = false;
 let shufflePlayed = [];
 
 const repeatLabels = { off: "OFF", all: "ALL", one: "ONE" };
