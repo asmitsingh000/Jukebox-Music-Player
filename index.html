@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Jukebox</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&display=swap"
@@ -16,16 +16,25 @@
     <div class="Player">
         <div class="player-box">
             <div class="player-image">
-                <div class="disc"></div>
+                <div class="disc" id="disc"></div>
             </div>
+
             <div class="information">
-                <div class="music-name"></div>
+                <div class="music-name" id="musicName">No song selected</div>
             </div>
+
             <div class="butons">
-                <button class="ctrl" id="prevBtn"><span class="icon prev-icon"></span></button>
-                <button class="ctrl" id="playBtn"><span class="icon play-icon"></span></button>
-                <button class="ctrl" id="nextBtn"><span class="icon next-icon"></span></button>
+                <button class="ctrl" id="prevBtn" title="Previous">
+                    <span class="icon prev-icon"></span>
+                </button>
+                <button class="ctrl" id="playBtn" title="Play / Pause">
+                    <span class="icon play-icon"></span>
+                </button>
+                <button class="ctrl" id="nextBtn" title="Next">
+                    <span class="icon next-icon"></span>
+                </button>
             </div>
+
             <div class="mode-wrap">
                 <button class="mode-btn" id="modeBtn" title="Modes">M</button>
                 <div class="mode-menu" id="modeMenu" hidden>
@@ -34,21 +43,23 @@
                 </div>
             </div>
         </div>
+
         <div class="music-display">
-            <button class="add-file-btn" id="addFile">
-                + Add File
-            </button>
-            <input type="file" id="fileinput" accept="audio/*" multiple hidden>
+            <button class="add-file-btn" id="addFileBtn">+ ADD FILE</button>
+            <input type="file" id="fileInput" accept="audio/*" multiple hidden>
+
             <div class="tabs">
-                <button class="tab" id="default">Default Song</button>
-                <button class="tab" id="new">New song</button>
+                <button class="tab active" data-tab="default">DEFAULT MUSIC</button>
+                <button class="tab" data-tab="new">NEW MUSIC</button>
             </div>
+
             <div class="files">
-                <ul id="songlist"></ul>
+                <ul id="songList"></ul>
             </div>
         </div>
     </div>
-    <audio src="" id="audio"></audio>
+
+    <audio id="audio"></audio>
     <script src="script.js"></script>
 </body>
 
