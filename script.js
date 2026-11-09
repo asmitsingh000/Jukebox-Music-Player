@@ -11,6 +11,7 @@ let currentTab = "default";
 let currentSong = null;
 let isShuffle = false;
 let repeatMode = "off";
+let isMuted = "off";
 let shufflePlayed = [];
 
 const repeatLabels = { off: "OFF", all: "ALL", one: "ONE" };
@@ -29,6 +30,7 @@ const modeBtn = document.getElementById("modeBtn");
 const modeMenu = document.getElementById("modeMenu");
 const shuffleBtn = document.getElementById("shuffleBtn");
 const repeatBtn = document.getElementById("repeatBtn");
+const muteBtn = document.getElementById("muteBtn");
 
 
 function renderList() {
@@ -39,8 +41,8 @@ function renderList() {
         const li = document.createElement("li");
         li.className = "empty";
         li.textContent = currentTab === "new"
-            ? "Koi file nahi hai. + ADD FILE dabao."
-            : "Koi default song nahi hai.";
+            ? "add new file +Add File "
+            : "There is no default song";
         songList.appendChild(li);
         return;
     }
@@ -142,7 +144,11 @@ function updateModeUI() {
     repeatBtn.textContent = `Repeat: ${repeatLabels[repeatMode]}`;
     repeatBtn.classList.toggle("on", repeatMode !== "off");
 
-    modeBtn.classList.toggle("active", isShuffle || repeatMode !== "off");
+    muteBtn.textContent = `Mute: ${isMuted ? "ON" : "OFF"}`;
+    muteBtn.classList.toggle("on", isMuted);
+
+
+    modeBtn.classList.toggle("active", isShuffle || repeatMode !== "off"||isMuted);
 }
 
 playBtn.addEventListener("click", togglePlay);
@@ -153,7 +159,11 @@ modeBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     modeMenu.hidden = !modeMenu.hidden;
 });
-
+muteBtn.addEventListener("click",()=>{
+    isMuted = !isMuted;
+    audio.muted = isMuted;
+    updateModeUI();
+})
 document.addEventListener("click", (e) => {
     if (!modeMenu.contains(e.target) && e.target !== modeBtn) {
         modeMenu.hidden = true;
