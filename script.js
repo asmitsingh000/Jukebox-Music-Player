@@ -1,8 +1,8 @@
 const DEFAULT_SONGS = [
-    { name: "Ben_10_(2005)_-_theme_song_(Hindi).mp3", src: "" }
+    { name: "Ben_10_(2005)_-_theme_song_(Hindi).mp3", src: "songs/Ben_10_(2005)_-_theme_song_(Hindi).mp3" }
 ]
 
-const Library = {
+const library = {
     default: [...DEFAULT_SONGS],
     new: []
 };
@@ -59,7 +59,7 @@ function playSong(song) {
     audio.play().catch((err) => console.log("Player error", err))
     renderList();
 }
-function toggelPlay() {
+function togglePlay() {
     if (!currentSong) {
         const songs = library[currentTab]
         if (songs.length > 0) playSong(songs[0])
@@ -89,7 +89,7 @@ function nextSong(fromEnded = false) {
         } while (songs[nextIndex] === currentSong);
     } else {
         nextIndex = songs.indexOf(currentSong) + 1
-        if (nextindex >= songs.length) {
+        if (nextIndex >= songs.length) {
             if (fromEnded && repeatMode === "off") {
                 audio.pause();
                 return;
@@ -127,7 +127,7 @@ function updateModeUI() {
     modeBtn.classList.toggle("active", isShuffle || repeatMode !== "off");
 }
 
-playBtn.addEventListener("click", toggelPlay);
+playBtn.addEventListener("click", togglePlay);
 nextBtn.addEventListener("click", () => nextSong(false));
 prevBtn.addEventListener("click", prevSong);
 
