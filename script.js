@@ -31,6 +31,7 @@ const modeMenu = document.getElementById("modeMenu");
 const shuffleBtn = document.getElementById("shuffleBtn");
 const repeatBtn = document.getElementById("repeatBtn");
 const muteBtn = document.getElementById("muteBtn");
+const Slider = document.getElementById("volumeSlider");
 
 
 function renderList() {
@@ -154,7 +155,9 @@ function updateModeUI() {
 playBtn.addEventListener("click", togglePlay);
 nextBtn.addEventListener("click", () => nextSong(false));
 prevBtn.addEventListener("click", prevSong);
-
+Slider.addEventListener('input',()=>{
+    audio.volume = event.target.value/100;
+})
 modeBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     modeMenu.hidden = !modeMenu.hidden;

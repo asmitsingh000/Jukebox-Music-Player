@@ -79,7 +79,10 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
+.progress{
+    display: flex;
+    align-items: center;
+}
 .controls {
     display: flex;
     align-items: center;
