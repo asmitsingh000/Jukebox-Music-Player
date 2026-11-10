@@ -1,6 +1,7 @@
 ## Pixl Jukebox Music Player
 
 A retro, pixel-style web jukebox built with plain **HTML, CSS, and JavaScript**. Play built-in default tracks, add your own audio files from your device, and control playback with shuffle, repeat, and mute modes, all wrapped in a nostalgic 8-bit interface.
+- Live :- https://asmitsingh000.github.io/Jukebox-Music-Player/
 ![Main Interface](screenshots/main-interface.png)
 
 ## Features
@@ -18,7 +19,7 @@ A retro, pixel-style web jukebox built with plain **HTML, CSS, and JavaScript**.
   - Shuffle ON/OFF
   - Repeat OFF,ALL,ONE
   - Mute ON/OFF
-- **Visual feedback** the M button turns red whenever any mode is active; the play button icon toggles between ▶ and ❚❚.
+- **Visual feedback** the M button turns red whenever any mode is active; the play button icon toggles between ▶️ and ⏸️.
 - **Auto-advance** to the next track when a song ends, respecting the repeat and shuffle settings.
 - **Responsive layout** that stacks vertically on small screens
 
