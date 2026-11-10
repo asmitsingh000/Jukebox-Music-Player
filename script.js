@@ -1,5 +1,8 @@
 const DEFAULT_SONGS = [
-    { name: "Ben 10 Theme (Hindi)", src: "songs/Ben_10_(2005)_-_theme_song_(Hindi).mp3" }
+    { name: "Ben 10 Theme (Hindi)", src: "songs/Ben_10_(2005)_-_theme_song_(Hindi).mp3" },
+    { name: "505.mp3", src: "songs/505.mp3" },
+    { name: "Dark Red.mp3", src: "songs/Dark Red.mp3" },
+    { name: "Notion(MP3_160K).mp3", src: "songs/Notion(MP3_160K).mp3" }
 ];
 
 const library = {
