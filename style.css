@@ -97,10 +97,14 @@ body {
     width: 100%;
     max-width: 480px;
 }
-.volume{
-    display: flex;
-    rotate: -90deg;
-}
+.volume {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--sub);
+      margin-bottom: 18px
+    }
+
 .ctrl {
     background: none;
     border: none;
