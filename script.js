@@ -32,8 +32,38 @@ const shuffleBtn = document.getElementById("shuffleBtn");
 const repeatBtn = document.getElementById("repeatBtn");
 const muteBtn = document.getElementById("muteBtn");
 const Slider = document.getElementById("volumeSlider");
+const currentTimeD = document.getElementById("cur");
+const durrationTimeD = document.getElementById("dur");
+const seekSlider = document.getElementById("seek")
 
 
+function loadTrack(index){
+    seekSlider.value = 0;
+    currentTimeD.textContent = "0:00";
+    durrationTimeD.textContent = "0:00";
+}
+function formatTime(seconds){
+    if(isNaN(seconds)) return "0:00";
+    const min = Math.floor(seconds/60);
+    const sec = Math.floor(seconds % 60);
+    return `${min}:${sec < 10 ? '0' : ''}${sec}`;
+}
+audio.addEventListener('loadedmetadata',()=>{
+    durrationTimeD.textContent = formatTime(audio.duration);
+});
+audio.addEventListener('timeupdate',()=>{
+    if(!isNaN(audio.duration)){
+        const progressPercent = (audio.currentTime/audio.duration)*100;
+        seekSlider.value=progressPercent;
+        currentTimeD.textContent = formatTime(audio.currentTime);
+    }
+});
+seekSlider.addEventListener('input',()=>{
+    if(!isNaN(audio.duration)){
+        const seekTo = (seekSlider.value/100)*audio.duration;
+        audio.currentTime = seekTo;
+    }
+});
 function renderList() {
     songList.innerHTML = "";
     const songs = library[currentTab];

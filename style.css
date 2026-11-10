@@ -82,6 +82,8 @@ body {
 .progress{
     display: flex;
     align-items: center;
+    gap: 10px;
+    font-variant-numeric: tabular-nums;
 }
 .controls {
     display: flex;
