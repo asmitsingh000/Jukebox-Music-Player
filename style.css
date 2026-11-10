@@ -296,4 +296,8 @@ body {
     .tab {
         font-size: 9px;
     }
+    .volume{
+    display: flex;
+    rotate:90deg;
+    }
 }
